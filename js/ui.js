@@ -19,5 +19,9 @@ function eventKey(number) {
     btnScore.addEventListener('click', (e) => {
         score();
     });
+
+    btnScoreBy.addEventListener('click', (e) => {
+        
+    });
 }
 

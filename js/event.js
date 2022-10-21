@@ -34,5 +34,5 @@ export function run(number) {
 }
 
 export function score(){
-    
+    return displayScores();
 }
