@@ -17,5 +17,6 @@ export function win() {
     input.setAttribute('disabled', '');
     input.classList.add('success');
     inputName.classList.remove('name');
+    inputName.focus();
     document.getElementById('lblNumber').classList.add('success');
 }

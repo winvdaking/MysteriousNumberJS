@@ -29,6 +29,7 @@ function eventKey(number) {
     
     inputName.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
+            inputName.setAttribute('disabled', '');
             saveScore(inputName.value.trim(), score);
             spanResult.innerText = displayScores(inputName.value.trim());
         }
