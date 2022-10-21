@@ -1,6 +1,6 @@
 import { random } from './random.js';
 import { greater, lower, win } from './status.js';
-import { saveScore } from './score.js';
+import { displayScores, saveScore } from './score.js';
 
 export function init() {
     eventKey(random());
@@ -8,6 +8,7 @@ export function init() {
 
 const input = document.getElementById('inputNumber');
 const inputName = document.getElementById('inputName');
+const spanResult = document.getElementById('result');
 
 let score = 0;
 
@@ -29,6 +30,7 @@ function eventKey(number) {
     inputName.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
             saveScore(inputName.value.trim(), score);
+            spanResult.innerText = displayScores(inputName.value.trim());
         }
     });
 }

@@ -13,6 +13,8 @@ export function saveScore(username, score = 0){
 	return player || null;
 }
 
-export function displayScores(){
-	
+export function displayScores(username){
+    let scoreboard = scores.sort((a,b) => a.score - b.score);
+    let position = scoreboard.findIndex(u => u.username === username)+1;
+    return `Vous êtes ${position}${position == 1 ? 'er' : 'ème'} !`;
 }
