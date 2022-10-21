@@ -7,7 +7,7 @@ export function init(){
 function eventKey(number){
     console.log(number);
     const spanResult = document.getElementById('result');
-    const input = document.getElementById('number');
+    const input = document.getElementById('inputNumber');
     input.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
             if (input.value > number) {
