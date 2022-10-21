@@ -1,37 +1,32 @@
 import { random } from './random.js';
-import { greater, lower, win } from './status.js';
-import { displayScores, saveScore } from './score.js';
+import { run, score } from './event.js';
+import { displayScoresByUser } from './score.js';
+
+const btnRun = document.getElementById('run');
+const btnScore = document.getElementById('score');
+const btnReset = document.getElementById('reset');
+const btnScoreBy = document.getElementById('score-by');
 
 export function init() {
-    eventKey(random());
-}
 
-const input = document.getElementById('inputNumber');
-const inputName = document.getElementById('inputName');
-const spanResult = document.getElementById('result');
-
-let score = 0;
-
-function eventKey(number) {
-    console.log(number);
-    input.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-            score++;
-            if (input.value > number) {
-                lower(score);
-            } else if (input.value < number) {
-                greater(score);
-            } else {
-                win();
-            }
-        }
+    btnRun.addEventListener('click', (e) => {
+        run(random());
     });
-    
-    inputName.addEventListener('keyup', (e) => {
-        if (e.key === 'Enter') {
-            inputName.setAttribute('disabled', '');
-            saveScore(inputName.value.trim(), score);
-            spanResult.innerText = displayScores(inputName.value.trim());
-        }
+
+    btnScore.addEventListener('click', (e) => {
+        score();
+    });
+
+    btnScoreBy.addEventListener('click', (e) => {
+        let inputSearch = document.getElementById('inputSearch');
+        inputSearch.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                displayScoresByUser(inputSearch.value.trim());
+            }
+        })
+    });
+
+    btnReset.addEventListener('click', (e) => {
+        run(random());
     });
 }
