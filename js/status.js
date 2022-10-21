@@ -11,8 +11,9 @@ export function greater() {
 }
 
 export function win() {
-    spanResult.innerText = "Félicitations ! Le nombre est bien le : " + number;
+    spanResult.innerText = "Félicitations, vous avez gagné !";
     input.setAttribute('disabled', '');
     input.classList.add('success');
     inputName.classList.remove('name');
+    document.getElementById('lblNumber').classList.add('success');
 }
