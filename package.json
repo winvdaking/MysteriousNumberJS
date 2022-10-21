@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/winvdaking/MysteriousNumberJS/issues"
   },
-  "homepage": "https://github.com/winvdaking/MysteriousNumberJS#readme"
+  "homepage": "https://github.com/winvdaking/MysteriousNumberJS#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
