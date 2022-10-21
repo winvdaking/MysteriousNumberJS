@@ -25,7 +25,7 @@ function eventKey(number) {
             }
         }
     });
-
+    
     inputName.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
             saveScore(inputName.value.trim(), score);
