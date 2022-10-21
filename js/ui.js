@@ -1,23 +1,37 @@
 import { random } from './random.js';
+import { greater, lower, win } from './status.js';
+import { displayScores, saveScore } from './score.js';
 
-export function init(){
+export function init() {
     eventKey(random());
 }
 
-function eventKey(number){
+const input = document.getElementById('inputNumber');
+const inputName = document.getElementById('inputName');
+const spanResult = document.getElementById('result');
+
+let score = 0;
+
+function eventKey(number) {
     console.log(number);
-    const spanResult = document.getElementById('result');
-    const input = document.getElementById('number');
     input.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
+            score++;
             if (input.value > number) {
-                spanResult.innerText = "Le nombre mystérieux est plus petit !";
-            }else if (input.value < number){
-                spanResult.innerText = "Le nombre mystérieux est plus grand !";
-            }else{
-                spanResult.innerText = "Félicitations ! Le nombre est bien le : " + number;
-                input.setAttribute('disabled', '');
+                lower(score);
+            } else if (input.value < number) {
+                greater(score);
+            } else {
+                win();
             }
+        }
+    });
+    
+    inputName.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+            inputName.setAttribute('disabled', '');
+            saveScore(inputName.value.trim(), score);
+            spanResult.innerText = displayScores(inputName.value.trim());
         }
     });
 }
