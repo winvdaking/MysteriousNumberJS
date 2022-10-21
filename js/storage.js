@@ -1,5 +1,5 @@
 export function load(){
-	return JSON.parse(localStorage.getItem('scores'));
+	return ('scores' in localStorage) ? JSON.parse(localStorage.getItem('scores')) : [];
 }
 
 export function save(data){
