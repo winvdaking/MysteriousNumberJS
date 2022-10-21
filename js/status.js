@@ -2,12 +2,14 @@ const spanResult = document.getElementById('result');
 const input = document.getElementById('inputNumber');
 const inputName = document.getElementById('inputName');
 
-export function lower() {
-    spanResult.innerText = "Le nombre mystérieux est plus petit !";
+export function lower(score) {
+    spanResult.innerText = `Le nombre mystérieux est plus petit ! | Nombre d'essai${score > 1 ? 's' : ''}: ${score}`;
+    input.select();
 }
 
-export function greater() {
-    spanResult.innerText = "Le nombre mystérieux est plus grand !";
+export function greater(score) {
+    spanResult.innerText = `Le nombre mystérieux est plus grand ! | Nombre d'essai${score > 1 ? 's' : ''}: ${score}`;
+    input.select();
 }
 
 export function win() {
