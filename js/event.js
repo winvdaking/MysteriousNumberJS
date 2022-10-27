@@ -10,8 +10,6 @@ export function run(number) {
 
     let score = 0;
 
-    console.log(number);
-
     input.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
             score++;
