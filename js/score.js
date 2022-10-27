@@ -25,6 +25,6 @@ export function displayScores(){
 
 export function displayScoreByUser(username){
     let scoreboard = displayScores();
-    let position = scoreboard.findIndex(u => u.username === username)+1;
-    return { username: username, score: position };
+    let score = scoreboard.findIndex(u => u.username === username);
+    return [{ username: scoreboard[score].username, score: scoreboard[score].score }];
 }
