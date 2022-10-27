@@ -1,4 +1,10 @@
-.success, .name{
+.success, .name, .none{
     display: none;
 }
 
+.is-fixed-bottom {
+  left: 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
