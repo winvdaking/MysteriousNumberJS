@@ -1,6 +1,6 @@
 import { random } from './random.js';
 import { run, score, resetScore } from './event.js';
-import { displayScoresByUser } from './score.js';
+import { displayScoreByUser } from './score.js';
 
 const $btnRun = document.getElementById('run');
 const $btnScore = document.getElementById('scores');
@@ -12,7 +12,7 @@ const $tbody = document.getElementById('tbody');
 
 export function init() {
 
-    loadScore();
+    loadScore(score());
 
     $btnRun.addEventListener('click', (e) => {
         $table.classList.add('none');
@@ -21,14 +21,22 @@ export function init() {
     });
 
     $btnScore.addEventListener('click', (e) => {
-        loadScore();
+        loadScore(score());
     });
 
     $btnScoreBy.addEventListener('click', (e) => {
+        let $divScore = document.getElementById('scoreBy');
+        $divScore.classList.remove('none');
+        $table.classList.add('none');
         let $inputSearch = document.getElementById('inputSearch');
         $inputSearch.addEventListener('keyup', (e) => {
             if (e.key === 'Enter') {
-                displayScoresByUser(inputSearch.value.trim());
+                let data = displayScoreByUser(inputSearch.value.trim());
+                console.log(data);
+                if (data.score == 0) return;
+                $table.classList.remove('none');
+                $tbody.replaceChildren();
+                loadScore(data);
             }
         })
     });
@@ -39,8 +47,8 @@ export function init() {
     });
 }
 
-function loadScore(){
-    score().forEach(usr => {
+function loadScore(tabScores){
+    tabScores.forEach(usr => {
         let $tr = document.createElement('tr');
         let $td1 = document.createElement('td');
         let $td2 = document.createElement('td');
