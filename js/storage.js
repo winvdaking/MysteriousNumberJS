@@ -5,3 +5,7 @@ export function load(){
 export function save(data){
 	localStorage.setItem('scores', JSON.stringify(data));
 }
+
+export function reset(){
+	localStorage.removeItem('scores');
+}
