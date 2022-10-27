@@ -1,4 +1,4 @@
-import { lower, greater, win } from 'status.js';
+import { lower, greater, win } from './status.js';
 import { displayScores, displayScoresByUser, saveScore } from './score.js';
 
 const input = document.getElementById('inputNumber');
