@@ -16,7 +16,7 @@ export function saveScore(username, score = 0){
 export function displayPositionByUser(username){
     let scoreboard = displayScores();
     let position = scoreboard.findIndex(u => u.username === username)+1;
-    return `Vous êtes ${position}${position == 1 ? 'er' : 'ème'} !`;
+    return `Vous êtes ${position}${position === 1 ? 'er' : 'ème'} !`;
 }
 
 export function displayScores(){
