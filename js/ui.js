@@ -1,5 +1,5 @@
 import { random } from './random.js';
-import { run, score } from './event.js';
+import { run, score, resetScore } from './event.js';
 import { displayScoresByUser } from './score.js';
 
 const $btnRun = document.getElementById('run');
@@ -34,7 +34,8 @@ export function init() {
     });
 
     $btnReset.addEventListener('click', (e) => {
-        run(random());
+        $tbody.classList.add('none');
+        resetScore();
     });
 }
 

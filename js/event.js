@@ -1,5 +1,6 @@
 import { lower, greater, win } from './status.js';
 import { displayScores, displayScoresByUser, saveScore } from './score.js';
+import { reset } from './storage.js';
 
 const input = document.getElementById('inputNumber');
 const inputName = document.getElementById('inputName');
@@ -35,4 +36,8 @@ export function run(number) {
 
 export function score(){
     return displayScores();
+}
+
+export function resetScore(){
+    reset();
 }
