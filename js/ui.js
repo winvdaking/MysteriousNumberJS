@@ -32,7 +32,6 @@ export function init() {
         $inputSearch.addEventListener('keyup', (e) => {
             if (e.key === 'Enter') {
                 let data = displayScoreByUser(inputSearch.value.trim());
-                console.log(data);
                 if (data.score == 0) return;
                 $table.classList.remove('none');
                 $tbody.replaceChildren();
