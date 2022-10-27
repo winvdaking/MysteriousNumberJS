@@ -1,5 +1,5 @@
 import { lower, greater, win } from './status.js';
-import { displayScores, displayScoresByUser, saveScore } from './score.js';
+import { displayScores, displayPositionByUser, saveScore } from './score.js';
 import { reset } from './storage.js';
 
 const input = document.getElementById('inputNumber');
@@ -29,7 +29,7 @@ export function run(number) {
         if (e.key === 'Enter') {
             inputName.setAttribute('disabled', '');
             saveScore(inputName.value.trim(), score);
-            spanResult.innerText = displayScoresByUser(inputName.value.trim());
+            spanResult.innerText = displayPositionByUser(inputName.value.trim());
         }
     });
 }
