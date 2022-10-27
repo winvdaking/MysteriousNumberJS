@@ -9,6 +9,8 @@ const $btnScoreBy = document.getElementById('score-by');
 const $table = document.getElementById('table');
 const $run = document.getElementById('runDiv');
 const $tbody = document.getElementById('tbody');
+const $inputSearch = document.getElementById('inputSearch');
+const $divScore = document.getElementById('scoreBy');
 
 export function init() {
 
@@ -25,13 +27,12 @@ export function init() {
     });
 
     $btnScoreBy.addEventListener('click', (e) => {
-        let $divScore = document.getElementById('scoreBy');
         $divScore.classList.remove('none');
         $table.classList.add('none');
-        let $inputSearch = document.getElementById('inputSearch');
+        
         $inputSearch.addEventListener('keyup', (e) => {
             if (e.key === 'Enter') {
-                let data = displayScoreByUser(inputSearch.value.trim());
+                const data = displayScoreByUser(inputSearch.value.trim());
                 if (data.score == 0) return;
                 $table.classList.remove('none');
                 $tbody.replaceChildren();
@@ -46,7 +47,7 @@ export function init() {
     });
 }
 
-function loadScore(tabScores){
+function loadScore(tabScores = []){
     tabScores.forEach(usr => {
         let $tr = document.createElement('tr');
         let $td1 = document.createElement('td');
