@@ -14,50 +14,54 @@
 	<section class="hero is-fullheight">
 		<div class="hero-body">
 			<div class="container has-text-centered">
-				<!--<span id="result"></span>
+				<div id="runDiv" class="none">
+					<span id="result"></span>
 					<label id="lblNumber" for="number">Entrez un nombre en 1 & 99 :</label>
 					<input type="number" name="number" id="inputNumber" placeholder="1">
 					<input class="name" type="text" name="inputName" id="inputName" placeholder="Entrez votre nom">
-					<input type="text" id="inputSearch" placeholder="Pseudo du joueur">-->
-					<table class="table is-bordered">
-						<thead>
-							<tr>
-								<th>One</th>
-								<th>Two</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Three</td>
-								<td>Four</td>
-							</tr>
-						</tbody>
-					</table>
 				</div>
+				<div id="scoreBy" class="none">
+					<input type="text" id="inputSearch" placeholder="Pseudo du joueur">
+				</div>
+				<table id="table" class="table is-bordered">
+					<thead>
+						<tr>
+							<th>One</th>
+							<th>Two</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Three</td>
+							<td>Four</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
+		</div>
 
-			<div class="hero-foot">
-				<section class="section is-fixed-bottom">
-					<div class="has-text-centered is-centered">
-						<div class="columns">
-							<div class="column">
-								<button class="button is-link is-light" id="run">Lancer une partie</button>
-							</div>
-							<div class="column">
-								<button class="button is-link is-light" id="scores">Scores</button>
-							</div>
-							<div class="column">
-								<button class="button is-link is-light" id="reset">Réinitialiser les scores</button>
-							</div>
-							<div class="column">
-								<button class="button is-link is-light" id="score-by">Rechercher un score</button>
-							</div>
+		<div class="hero-foot">
+			<section class="section is-fixed-bottom">
+				<div class="has-text-centered is-centered">
+					<div class="columns">
+						<div class="column">
+							<button class="button is-link is-light" id="run">Lancer une partie</button>
 						</div>
-					</div>          
-				</section>
-			</div>
-		</section>
-		<script type="module" src="js/main.js"></script>
-	</body>
+						<div class="column">
+							<button class="button is-link is-light" id="scores">Scores</button>
+						</div>
+						<div class="column">
+							<button class="button is-link is-light" id="reset">Réinitialiser les scores</button>
+						</div>
+						<div class="column">
+							<button class="button is-link is-light" id="score-by">Rechercher un score</button>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</section>
+	<script type="module" src="js/main.js"></script>
+</body>
 
-	</html>
+</html>
