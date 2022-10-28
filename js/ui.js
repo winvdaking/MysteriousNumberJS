@@ -15,15 +15,15 @@ export function init() {
         });
 
         $btnMedium.addEventListener('click', (e) => {
-            choiceLevel(1, 499);
+            choiceLevel(1, 499, 8);
         });
         
         $btnHard.addEventListener('click', (e) => {
-            choiceLevel(1, 999);
+            choiceLevel(1, 999, 10);
         });
 
         $btnImpo.addEventListener('click', (e) => {
-            choiceLevel(1, 9999);
+            choiceLevel(1, 9999, 10);
         });
     });
 
@@ -66,10 +66,10 @@ function loadScore(tabScores = []){
     });
 }
 
-function choiceLevel(min = 1, max = 99){
-    $lblNumber.innerText = `Entrez un nombre en ${min} & ${max} :`;
+function choiceLevel(min = 1, max = 99, nbEssai = 5){
+    $lblNumber.innerText = `Vous avez ${nbEssai} essais !\nEntrez un nombre en ${min} & ${max} :`;
     $btnsRun.classList.remove('columns');
     $btnsRun.classList.add('none');
     $run.classList.remove('none');
-    run(random(min, max));
+    run(random(min, max), nbEssai);
 }
