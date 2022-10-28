@@ -1,4 +1,4 @@
-import { lower, greater, win } from './status.js';
+import { lower, greater, win, perdu } from './status.js';
 import { displayScores, displayPositionByUser, saveScore } from './score.js';
 import { reset } from './storage.js';
 
@@ -6,20 +6,25 @@ const input = document.getElementById('inputNumber');
 const inputName = document.getElementById('inputName');
 const spanResult = document.getElementById('result');
 
-export function run(number) {
+export function run(number, nbEssai) {
 
     let score = 0;
 
     input.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
             score++;
-            if (input.value > number) {
-                lower(score);
-            } else if (input.value < number) {
-                greater(score);
+            if (score == nbEssai) {
+                perdu(number);
             } else {
-                win();
+                if (input.value > number) {
+                    lower(score);
+                } else if (input.value < number) {
+                    greater(score);
+                } else {
+                    win();
+                }
             }
+
         }
     });
 
@@ -32,10 +37,10 @@ export function run(number) {
     });
 }
 
-export function score(){
+export function score() {
     return displayScores();
 }
 
-export function resetScore(){
+export function resetScore() {
     reset();
 }
