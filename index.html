@@ -14,27 +14,31 @@
 	<section class="hero is-fullheight">
 		<div class="hero-body">
 			<div class="container has-text-centered">
-				<div id="runDiv" class="none">
-					<h1>Choissisez votre niveau de difficulté</h1>
-					<br>
-					<div class="columns">
-						<div class="column">
-							<button class="button is-link is-light" id="easy">Facile</button>
-						</div>
-						<div class="column">
-							<button class="button is-link is-light" id="medium">Moyen</button>
-						</div>
-						<div class="column">
-							<button class="button is-link is-light" id="hard">Difficile</button>
-						</div>
-						<div class="column">
-							<button class="button is-link is-light" id="monster">Impossible</button>
+				<div id="runDivBtn" class="none">
+					<div id="btnsRun">
+						<h1>Choissisez votre niveau de difficulté</h1>
+						<br>
+						<div class="columns">
+							<div class="column">
+								<button class="button is-link is-light" id="easy">Facile</button>
+							</div>
+							<div class="column">
+								<button class="button is-link is-light" id="medium">Moyen</button>
+							</div>
+							<div class="column">
+								<button class="button is-link is-light" id="hard">Difficile</button>
+							</div>
+							<div class="column">
+								<button class="button is-link is-light" id="monster">Impossible</button>
+							</div>
 						</div>
 					</div>
-					<span id="result"></span>
-					<label id="lblNumber" for="number">Entrez un nombre en 1 & 99 :</label>
-					<input type="number" name="number" id="inputNumber" placeholder="1">
-					<input class="name" type="text" name="inputName" id="inputName" placeholder="Entrez votre nom">
+					<div id="runDiv" class="none">
+						<span id="result"></span>
+						<label id="lblNumber" for="number">Entrez un nombre en 1 & 99 :</label>
+						<input type="number" name="number" id="inputNumber" placeholder="1">
+						<input class="name" type="text" name="inputName" id="inputName" placeholder="Entrez votre nom">
+					</div>
 				</div>
 				<div id="scoreBy" class="none">
 					<input type="text" id="inputSearch" placeholder="Pseudo du joueur">
