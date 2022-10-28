@@ -7,7 +7,7 @@ const inputName = document.getElementById('inputName');
 const spanResult = document.getElementById('result');
 
 export function run(number) {
-
+    
     let score = 0;
 
     input.addEventListener('keyup', (e) => {
