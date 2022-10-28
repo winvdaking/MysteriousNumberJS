@@ -14,6 +14,9 @@ const $btnMedium = document.getElementById('medium');
 const $btnHard = document.getElementById('hard');
 const $btnImpo = document.getElementById('impossible');
 const $lblNumber = document.getElementById('lblNumber');
+const $spanResult = document.getElementById('result');
+const $input = document.getElementById('inputNumber');
+const $inputName = document.getElementById('inputName');
 
 export {
     $btnRun,
@@ -31,5 +34,8 @@ export {
     $btnMedium,
     $btnHard,
     $btnImpo,
-    $lblNumber
+    $lblNumber,
+    $spanResult,
+    $input,
+    $inputName
 }
