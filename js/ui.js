@@ -8,6 +8,8 @@ export function init() {
     loadScore(score());
 
     $btnRun.addEventListener('click', (e) => {
+        $run.classList.add('none');
+        $btnsRun.classList.remove('none');
         $table.classList.add('none');
         $divRunBtn.classList.remove('none');
         $btnEasy.addEventListener('click', (e) => {
@@ -35,12 +37,14 @@ export function init() {
     });
 
     $btnScoreBy.addEventListener('click', (e) => {
+        $inputSearch.classList.remove('none');
         $divScore.classList.remove('none');
         $table.classList.add('none');
         $divRunBtn.classList.add('none');
 
         $inputSearch.addEventListener('keyup', (e) => {
             if (e.key === 'Enter') {
+                $inputSearch.classList.add('none');
                 const data = displayScoreByUser(inputSearch.value.trim());
                 if (data.score == 0) return;
                 $table.classList.remove('none');
