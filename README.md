@@ -1,4 +1,4 @@
-### Exercices Bash :
+### Exercices Bash (fait en JS) :
 ## Jeu du + -
 # Attendu
 
