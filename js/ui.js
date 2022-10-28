@@ -1,7 +1,7 @@
 import { random } from './random.js';
 import { run, score, resetScore } from './event.js';
 import { displayScoreByUser } from './score.js';
-import { $btnRun, $btnScore, $btnReset, $btnScoreBy, $table, $run, $tbody, $inputSearch, $divScore, $divRunBtn, $btnsRun, $btnEasy, $btnMedium, $btnHard, $btnImpo, $lblNumber } from './config.js';
+import { $btnRun, $btnScore, $btnReset, $btnScoreBy, $table, $run, $tbody, $inputSearch, $divScore, $divRunBtn, $btnsRun, $btnEasy, $btnMedium, $btnHard, $btnImpo, $lblNumber, $spanResult } from './config.js';
 
 export function init() {
 
@@ -28,6 +28,7 @@ export function init() {
     });
 
     $btnScore.addEventListener('click', (e) => {
+        $divScore.classList.add('none');
         $divRunBtn.classList.add('none');
         $table.classList.remove('none');
         loadScore(score());
@@ -36,7 +37,8 @@ export function init() {
     $btnScoreBy.addEventListener('click', (e) => {
         $divScore.classList.remove('none');
         $table.classList.add('none');
-        
+        $divRunBtn.classList.add('none');
+
         $inputSearch.addEventListener('keyup', (e) => {
             if (e.key === 'Enter') {
                 const data = displayScoreByUser(inputSearch.value.trim());

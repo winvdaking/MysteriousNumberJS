@@ -13,7 +13,7 @@ export function run(number, nbEssai) {
     input.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
             score++;
-            if (score == nbEssai) {
+            if (score+1 == nbEssai) {
                 perdu(number);
             } else {
                 if (input.value > number) {
